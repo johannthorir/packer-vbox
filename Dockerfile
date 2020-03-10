@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-LABEL maintainer="johann.johannsson@marel.com"
+LABEL maintainer="johann.thorir.johannsson@gmail.com"
 
 # Requisits.
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -33,6 +33,6 @@ RUN PACKER_VERSION=`wget -O- https://releases.hashicorp.com/packer/ 2> /dev/null
 
 COPY build.sh /usr/local/bin/build.sh
 
-CMD ["build.sh"]
+CMD ["echo $PATH"]
 WORKDIR /build
 
