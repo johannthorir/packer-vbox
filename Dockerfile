@@ -31,8 +31,10 @@ RUN PACKER_VERSION=`wget -O- https://releases.hashicorp.com/packer/ 2> /dev/null
     mv packer /usr/local/bin && \
     rm packer.zip
 
-COPY build.sh /usr/local/bin/build.sh
+# Setup the directory
+ENV BUILD_DIR="/build"
+RUN test ! -f "${BUILD_DIR}" -a ! -d "${BUILD_DIR}" && mkdir -p "${BUILD_DIR}"
 
-CMD ["echo $PATH"]
-WORKDIR /build
+# Working
+WORKDIR "${DATA_DIR}"
 
