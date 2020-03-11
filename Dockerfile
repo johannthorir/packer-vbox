@@ -10,6 +10,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     openssh-client \
     gnupg2 \
     unzip \
+    curl \
+    jq \
     wget
 
 # Virtualbox
