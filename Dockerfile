@@ -38,5 +38,5 @@ ENV BUILD_DIR="/build"
 RUN test ! -f "${BUILD_DIR}" -a ! -d "${BUILD_DIR}" && mkdir -p "${BUILD_DIR}"
 
 # Working
-WORKDIR "${DATA_DIR}"
+WORKDIR "${BUILD_DIR}"
 
